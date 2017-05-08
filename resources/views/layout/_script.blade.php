@@ -18,4 +18,4 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="js/pages/dashboard2.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="../../../public/js/demo.js"></script>
+    <script src="js/demo.js"></script>
