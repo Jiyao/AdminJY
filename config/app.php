@@ -180,6 +180,8 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
 
+        Zizaco\Entrust\EntrustServiceProvider::class,
+
     ],
 
     /*
@@ -230,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Entrust' => Zizaco\Entrust\EntrustFacade::class,
     ],
 
 ];
