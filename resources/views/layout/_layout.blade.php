@@ -12,7 +12,7 @@
 
     @include('layout._top')
     <!-- Left side column. contains the logo and sidebar -->
-    @include('layout._left')
+    @include('layouts._left')
 
     <!-- Content Wrapper. Contains page content -->
     @yield('content')
@@ -215,6 +215,6 @@
 </div>
 <!-- ./wrapper -->
 
-    @include('layout._script')
+    @include('layouts._script')
 </body>
 </html>
