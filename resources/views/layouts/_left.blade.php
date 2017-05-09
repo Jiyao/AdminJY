@@ -27,6 +27,13 @@
                     <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
                 </ul>
             </li>
+            <li>
+                <a href="/role">
+                    <i class="fa fa-th"></i> <span>权限管理</span>
+                    <span class="pull-right-container">
+            </span>
+                </a>
+            </li>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-files-o"></i>
