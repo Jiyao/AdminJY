@@ -1,3 +1,9 @@
-span.checkbox-text {
+.card .card-header-btn {
+    padding: 20px 20px 20px 35px;
+}
 
+table.table tbody > tr td {
+    text-align: center;
+    height: 36px;
+    line-height: 36px;
 }

@@ -1,100 +1,84 @@
-<aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search...">
-                <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-        </form>
-        <!-- /.search form -->
-        <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
-            <li class="active treeview">
+<aside class="app-sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <a class="sidebar-brand" href="#"><span class="highlight">Admin</span> JY</a>
+        <button type="button" class="sidebar-toggle">
+            <i class="fa fa-times"></i>
+        </button>
+    </div>
+    <div class="sidebar-menu">
+        <ul class="sidebar-nav">
+            <li class="active">
                 <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                    <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="/role">
-                    <i class="fa fa-th"></i> <span>权限管理</span>
-                    <span class="pull-right-container">
-            </span>
+                    <div class="icon">
+                        <i class="fa fa-tasks" aria-hidden="true"></i>
+                    </div>
+                    <div class="title">首页</div>
                 </a>
             </li>
-            <li class="treeview">
+            <li class="@@menu.messaging">
                 <a href="#">
-                    <i class="fa fa-files-o"></i>
-                    <span>Layout Options</span>
-                    <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                    <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                    <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                    <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="pages/widgets.html">
-                    <i class="fa fa-th"></i> <span>Widgets</span>
-                    <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
-            </span>
+                    <div class="icon">
+                        <i class="fa fa-comments" aria-hidden="true"></i>
+                    </div>
+                    <div class="title">Messaging</div>
                 </a>
             </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-share"></i> <span>Multilevel</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+            <li class="dropdown ">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <div class="icon">
+                        <i class="fa fa-cube" aria-hidden="true"></i>
+                    </div>
+                    <div class="title">UI Kits</div>
                 </a>
-                <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                    <li>
-                        <a href="#"><i class="fa fa-circle-o"></i> Level One
-                            <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                            <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                </ul>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i> UI Kits</li>
+                        <li><a href="#">Customize</a></li>
+                        <li><a href="#">Components</a></li>
+                        <li><a href="#">Card</a></li>
+                        <li><a href="#">Form</a></li>
+                        <li><a href="#">Table</a></li>
+                        <li><a href="#">Icons</a></li>
+                        <li class="line"></li>
+                        <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i> Advanced Components</li>
+                        <li><a href="./uikits/pricing-table.html">Pricing Table</a></li>
+                        <!-- <li><a href="./uikits/timeline.html">Timeline</a></li> -->
+                        <li><a href="./uikits/chart.html">Chart</a></li>
+                    </ul>
+                </div>
             </li>
-            <li class="header">LABELS</li>
-            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <div class="icon">
+                        <i class="fa fa-group" aria-hidden="true"></i>
+                    </div>
+                    <div class="title">权限管理</div>
+                </a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i> 角色权限</li>
+                        <li><a href="/role">角色管理</a></li>
+                        <li><a href="#">账号管理</a></li>
+                        <li><a href="#">权限分配</a></li>
+                        <li class="line"></li>
+                        <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i> 菜单分配</li>
+                        <!-- <li><a href="./pages/landing.html">Landing</a></li> -->
+                        <li><a href="#">菜单管理</a></li>
+                        <li><a href="#">菜单权限</a></li>
+                        <!-- <li><a href="./pages/404.html">404</a></li> -->
+                    </ul>
+                </div>
+            </li>
         </ul>
-    </section>
-    <!-- /.sidebar -->
+    </div>
+    <div class="sidebar-footer">
+        <ul class="menu">
+            <li>
+                <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li><a href="#"><span class="flag-icon flag-icon-th flag-icon-squared"></span></a></li>
+        </ul>
+    </div>
 </aside>
