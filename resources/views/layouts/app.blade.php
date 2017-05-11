@@ -23,6 +23,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/common.css') }}">
 
+    <script type="text/javascript" src="assets/js/vendor.js"></script>
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -45,6 +46,7 @@
             <div class="row">
                 @yield('content')
             </div>
+            @include('vendor.flashy.message')
             <footer class="app-footer">
                 <div class="row">
                     <div class="col-xs-12">
@@ -58,7 +60,6 @@
     </div>
 
     <!-- Scripts -->
-    <script type="text/javascript" src="assets/js/vendor.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
 </body>
 </html>

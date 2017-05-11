@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Role;
 use Illuminate\Http\Request;
+use MercurySeries\Flashy\Flashy;
 
 class RoleController extends Controller
 {
@@ -25,6 +26,7 @@ class RoleController extends Controller
         $role->display_name = $request->input('display_name');
         $role->description = $request->input('description');
         $role->save();
-        return redirect('/role');
+        Flashy::success('新增成功!', '/role');
+        return \Redirect::route('role.index');
     }
 }
