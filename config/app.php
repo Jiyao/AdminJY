@@ -183,6 +183,7 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         MercurySeries\Flashy\FlashyServiceProvider::class,
+        Spatie\Activitylog\ActivitylogServiceProvider::class,
     ],
 
     /*

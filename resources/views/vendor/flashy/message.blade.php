@@ -5,21 +5,20 @@
     border-radius: 4px;
     font-weight: 400;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 16px;
-    color: #fff;
+    top: 10px;
+    left: 200px;
+    z-index: 101011;
+    font-size: 12px;
+    color: #333;
+    width: 100%;
 }
 
-.flashy--success {
-    background-color: #99c93d;
-    color: #fff;
+.flashy--success i {
+    color: #29c75f;
 }
 
 .flashy--warning {
     color: #8a6d3b;
-    background-color: #fcf8e3;
-    border-color: #faebcc;
 }
 
 .flashy--muted {
@@ -63,12 +62,6 @@
     margin-bottom: 0;
 }
 
-.flashy i {
-    margin-right: 8px;
-    position: relative;
-    top: 6px;
-}
-
 .flashy .flashy__body {
     color: inherit;
 }
@@ -82,16 +75,37 @@
         margin-left: -150px;
     }
 }
+
+.flash--message-notice {
+    width: auto;
+    vertical-align: middle;
+    position: absolute;
+    left: 50%;
+}
+.flash--message-notice-content {
+    position: relative;
+    right: 50%;
+    padding: 8px 30px;
+    border-radius: 4px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.2);
+    background: #fff;
+    display: block;
+}
+.flash--icon {
+    margin-right: 8px;
+    font-size: 14px;
+    top: 1px;
+    position: relative;
+}
 </style>
 
 <script>
     function flashy(message, link) {
         var template = $($("#flashy-template").html());
         $(".flashy").remove();
-        template.find(".flashy__body").html(message).attr("href", link || "#").end()
-         .appendTo("body").hide().fadeIn(300).delay(2800).animate({
-            marginRight: "-100%"
-        }, 300, "swing", function() {
+        template.find(".flash--message-notice-content span").html(message);
+        var tip = template.find(".flashy__body").attr("href", link || "#").end().appendTo("body");
+        tip.hide().fadeIn(2500).delay(30000).animate({marginTop: "-100%"}, '30000', "swing", function() {
             $(this).remove();
         });
     }
@@ -99,8 +113,15 @@
 
 @if(Session::has('flashy_notification.message'))
 <script id="flashy-template" type="text/template">
-    <div class="flashy flashy--{{ Session::get('flashy_notification.type') }}">
-        <a href="#" class="flashy__body" target="_blank"></a>
+    <div class="flashy">
+        <div class="flash--message-notice">
+            <a href="#" class="flashy__body flashy--{{ Session::get('flashy_notification.type') }}" target="_blank">
+                <div class="flash--message-notice-content">
+                    <i class="fa fa-check-circle flash--icon"></i>
+                    <span></span>
+                </div>
+            </a>
+        </div>
     </div>
 </script>
 
