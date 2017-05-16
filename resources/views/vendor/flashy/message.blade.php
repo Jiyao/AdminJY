@@ -105,7 +105,7 @@
         $(".flashy").remove();
         template.find(".flash--message-notice-content span").html(message);
         var tip = template.find(".flashy__body").attr("href", link || "#").end().appendTo("body");
-        tip.hide().fadeIn(2500).delay(30000).animate({marginTop: "-100%"}, '30000', "swing", function() {
+        tip.hide().fadeIn(2500).delay(3000).animate({marginTop: "-100%"}, '300', "swing", function() {
             $(this).remove();
         });
     }

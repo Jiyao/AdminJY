@@ -1,69 +1,71 @@
-@extends('layouts.simple')
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flat Admin V.3 - Free flat-design bootstrap administrator templates</title>
 
-@section('content')
-<div class="container">
-    <div class="row style-line-90 hidden-sm hidden-xs"></div>
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2 style-margin-60">
-            <div class="panel panel-default">
-                <div class="panel-heading">登 录</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/vendor.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/flat-admin.css') }}">
+
+    <!-- Theme -->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/theme/blue-sky.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/theme/blue.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/theme/red.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/theme/yellow.css') }}">
+
+</head>
+<body>
+<div class="app app-default">
+<div class="app-container app-login">
+    <div class="flex-center">
+        <div class="app-header"></div>
+        <div class="app-body">
+            <div class="app-block">
+                <div class="app-form">
+                    <div class="form-header">
+                        <div class="app-brand"><span class="highlight">Admin</span> JY</div>
+                    </div>
+                    <form action="{{ URL::route('login') }}" method="POST">
                         {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">邮箱</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <div class="input-group {{ $errors->has('name') ? ' has-error' : '' }}">
+                            <span class="input-group-addon" id="basic-addon1">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                            <input type="text" name="email" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
                         </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">密码</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon2">
+                                <i class="fa fa-key" aria-hidden="true"></i>
+                            </span>
+                            <input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon2">
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> 记住我
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    登录
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    忘记密码?
-                                </a>
-                            </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-submit" >登录</button>
                         </div>
                     </form>
+
+                    <div class="form-line">
+                        <div class="title">OR</div>
+                    </div>
+                    <div class="form-footer">
+                        <button type="button" class="btn btn-default btn-sm btn-social __facebook">
+                            <div class="info">
+                                <i class="icon fa fa-facebook-official" aria-hidden="true"></i>
+                                <span class="title">Login with Facebook</span>
+                            </div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="app-footer">
+        </div>
     </div>
 </div>
-@endsection
+</div>
+
+<script type="text/javascript" src="{{ URL::asset('assets/js/vendor.js') }}"></script>
+
+</body>
+</html>

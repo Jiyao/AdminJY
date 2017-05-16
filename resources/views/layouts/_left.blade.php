@@ -56,10 +56,10 @@
                 </a>
                 <div class="dropdown-menu">
                     <ul>
-                        <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i> 角色权限</li>
-                        <li><a href="/role">角色管理</a></li>
-                        <li><a href="#">账号管理</a></li>
-                        <li><a href="#">权限分配</a></li>
+                        <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i> 权限管理</li>
+                        <li><a href="{{ URL::route('user.index') }}">用户帐号</a></li>
+                        <li><a href="{{ URL::route('role.index') }}">角色管理</a></li>
+                        <li><a href="{{ URL::route('permission.index') }}">权限分配</a></li>
                         <li class="line"></li>
                         <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i> 菜单分配</li>
                         <!-- <li><a href="./pages/landing.html">Landing</a></li> -->

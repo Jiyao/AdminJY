@@ -11,6 +11,17 @@
 |
 */
 
-Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
+
+Auth::routes();
+Route::get('logout', 'HomeController@logout')->name('getlogout');
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
+Route::resource('user', 'UserController');
+
 Route::resource('role', 'RoleController');
+Route::resource('permission', 'PermissionController');
+Route::get('role/permissions/{id}', 'RoleController@Perms')->name('role.perms');
+Route::post('role/permissions', 'RoleController@savePerms');
+
+Route::resource('menu', 'MenuController');

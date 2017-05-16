@@ -1,11 +1,11 @@
 @extends('layouts.app')
-@section('title', '角色列表')
+@section('title', '权限列表')
 @section('content')
 <div class="row">
     <div class="col-xs-12">
         <div class="card">
             <div class="card-header card-header-btn">
-                <a href="{{ route('role.create') }}" class="btn btn-xs btn-default btn-toolbar"><i class="fa fa-plus"></i> 新增</a>
+                <a href="{{ route('permission.create') }}" class="btn btn-xs btn-default btn-toolbar"><i class="fa fa-plus"></i> 新增</a>
             </div>
             <div class="card-body">
                 <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
@@ -23,8 +23,8 @@
                             <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr>
-                                    <th>角色名</th>
-                                    <th>角色名称</th>
+                                    <th>权限名</th>
+                                    <th>权限名称</th>
                                     <th>描述</th>
                                     <th>添加日期</th>
                                     <th>更新日期</th>
@@ -32,23 +32,22 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($roles as $role)
+                                @foreach($permissions as $permission)
                                     <tr>
-                                        <td>{{ $role->name }}</td>
-                                        <td>{{ $role->display_name }}</td>
-                                        <td>{{ $role->description }}</td>
-                                        <td>{{ $role->created_at }}</td>
-                                        <td>{{ $role->updated_at }}</td>
+                                        <td>{{ $permission->name }}</td>
+                                        <td>{{ $permission->display_name }}</td>
+                                        <td>{{ $permission->description }}</td>
+                                        <td>{{ $permission->created_at }}</td>
+                                        <td>{{ $permission->updated_at }}</td>
                                         <td>
                                             <a href="#" class="btn btn-xs btn-success">启用</a>
                                             <a href="#" class="btn btn-xs btn-primary">编辑</a>
-                                            <a href="{{ route('role.perms', $role->id) }}" class="btn btn-xs btn-info">权限</a>
                                         </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
-                            <div class="text-center">{!! $roles->links() !!}</div>
+                            <div class="text-center">{!! $permissions->links() !!}</div>
                         </div>
                     </div>
                 </div>

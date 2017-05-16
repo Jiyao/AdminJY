@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use MercurySeries\Flashy\Flashy;
+
 class HomeController extends Controller
 {
     /**
@@ -19,6 +21,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('newhome');
+        return view('home');
+    }
+
+    public function logout()
+    {
+        \Auth::logout();
+        Flashy::success('退出系统!');
+        return \Redirect::route('login');
     }
 }

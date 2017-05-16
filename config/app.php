@@ -184,6 +184,9 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         MercurySeries\Flashy\FlashyServiceProvider::class,
         Spatie\Activitylog\ActivitylogServiceProvider::class,
+
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        Nestable\NestableServiceProvider::class
     ],
 
     /*
@@ -238,6 +241,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Flashy' => MercurySeries\Flashy\Flashy::class,
+        'Nestable' => Nestable\Facades\NestableService::class
     ],
 
 ];
