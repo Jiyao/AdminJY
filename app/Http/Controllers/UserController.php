@@ -9,6 +9,10 @@ use MercurySeries\Flashy\Flashy;
 
 class UserController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $users = User::with('roles')->paginate(10);
