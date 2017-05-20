@@ -16,11 +16,11 @@
                 </a>
             </li>
             <li class="@@menu.messaging">
-                <a href="#">
+                <a href="{{ route('article.index') }}">
                     <div class="icon">
-                        <i class="fa fa-comments" aria-hidden="true"></i>
+                        <i class="fa fa-book" aria-hidden="true"></i>
                     </div>
-                    <div class="title">Messaging</div>
+                    <div class="title">文章</div>
                 </a>
             </li>
             <li class="dropdown ">

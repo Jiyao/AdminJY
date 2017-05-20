@@ -25,3 +25,5 @@ Route::get('role/permissions/{id}', 'RoleController@Perms')->name('role.perms');
 Route::post('role/permissions', 'RoleController@savePerms');
 
 Route::resource('menu', 'MenuController');
+
+Route::resource('article', 'ArticleController');

@@ -38,3 +38,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+// 引入markdown编辑器
+window.simplemde = require('simplemde');
