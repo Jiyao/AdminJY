@@ -1,9 +1,6 @@
 <?php
-/**
- * Author: jiyao
- * Date  : 2017/5/9
- */
-namespace App;
+namespace App\Role;
+
 use Zizaco\Entrust\EntrustRole;
 
 class Role extends EntrustRole

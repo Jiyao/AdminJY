@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Menu;
 
 use Illuminate\Database\Eloquent\Model;
 use Nestable\NestableTrait;
