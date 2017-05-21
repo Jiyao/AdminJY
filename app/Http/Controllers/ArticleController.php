@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Markdown\Markdown;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
@@ -30,9 +31,10 @@ class ArticleController extends Controller
         return redirect()->route('article.index');
     }
 
-    public function show($id)
+    public function show($id, Markdown $markdown)
     {
         $article = Article::findOrFail($id);
+        $article->html = $markdown->markdownToHtml($article->content);
         return view('article.show', compact('article'));
     }
 }

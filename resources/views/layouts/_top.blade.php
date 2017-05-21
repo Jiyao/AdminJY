@@ -170,8 +170,8 @@
 
 <div class="btn-floating" id="help-actions">
     <div class="btn-bg"></div>
-    <button type="button" class="btn btn-default btn-toggle" data-toggle="toggle" data-target="#help-actions">
-        <i class="icon fa fa-plus"></i>
+    <button type="button" class="btn btn-default btn-toggle btn-floating-small" data-toggle="toggle" data-target="#help-actions">
+        <i class="icon fa fa-th"></i>
         <span class="help-text">Shortcut</span>
     </button>
     <div class="toggle-content">
@@ -183,3 +183,28 @@
         </ul>
     </div>
 </div>
+<div class="go-top-floating">
+    <div class="btn-bg"></div>
+    <div class="btn btn-default btn-floating-small" id="go-to-top">
+        <i class="icon fa fa-chevron-up"></i>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("#go-to-top").click(function(){
+            console.log(123);
+            jQuery("html,body").animate({
+                scrollTop:0
+            },1000);
+        });
+        $(window).scroll(function() {
+            if ( $(this).scrollTop() > 100){
+                $('#help-actions').css('bottom','80px');
+                $('#go-to-top').fadeIn("fast");
+            } else {
+                $('#help-actions').css('bottom','30px');
+                $('#go-to-top').stop().fadeOut("fast");
+            }
+        });
+    });
+</script>

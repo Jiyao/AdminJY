@@ -3799,7 +3799,7 @@ ui-view > .app-messaging-container {
   border-radius: 3px;
   box-shadow: 0 1px 2px #c8d1d3; }
   .card .card-header {
-    padding: 30px;
+    padding: 16px 30px;
     font-size: 1.1em;
     font-weight: 400;
     border-bottom: 1px solid #dfe6e8;
@@ -5632,8 +5632,8 @@ footer.app-footer {
     transition: all 0.3s ease; }
   .btn-floating .btn-toggle {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     margin-bottom: 0;
     display: -ms-flexbox;
     display: flex;
@@ -5650,7 +5650,7 @@ footer.app-footer {
     box-shadow: none;
     z-index: 101110; }
     .btn-floating .btn-toggle i {
-      font-size: 2em;
+      font-size: 1.5em;
       color: #FFF; }
     .btn-floating .btn-toggle .help-text {
       display: none; }

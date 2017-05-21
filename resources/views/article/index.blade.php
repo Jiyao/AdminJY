@@ -27,7 +27,6 @@
                                     <th>类别</th>
                                     <th>描述</th>
                                     <th>浏览数</th>
-                                    <th>添加日期</th>
                                     <th>更新日期</th>
                                     <th>操作</th>
                                 </tr>
@@ -36,14 +35,13 @@
                                 @foreach($articles as $article)
                                     <tr>
                                         <td>
-                                            <a href="{{ route('article.show', ['id' => $article->id]) }}">
-                                                {{ $article->title }}
+                                            <a href="{{ route('article.show', ['id' => $article->id]) }}" title="{{ $article->title }}">
+                                                {{ str_limit($article->title, 30) }}
                                             </a>
                                         </td>
                                         <td></td>
-                                        <td>{{ \Illuminate\Support\Str::limit($article->summary, 10) }}</td>
+                                        <td>{{ str_limit($article->summary, 30) }}</td>
                                         <td>{{ $article->view_num }}</td>
-                                        <td>{{ $article->created_at }}</td>
                                         <td>{{ $article->updated_at }}</td>
                                         <td>
                                             <a href="#" class="btn btn-xs btn-success">启用</a>
