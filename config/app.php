@@ -190,6 +190,7 @@ return [
 
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Nestable\NestableServiceProvider::class,
+        zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class
     ],
 
     /*

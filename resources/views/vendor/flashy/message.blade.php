@@ -113,7 +113,6 @@
 
 @if(Session::has('flashy_notification.message'))
 
-    <h2>32232</h2>
 <script id="flashy-template" type="text/template">
     <div class="flashy">
         <div class="flash--message-notice">

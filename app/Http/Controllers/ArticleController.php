@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Traits\UploadFileTrait;
 use App\Markdown\Markdown;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+    use UploadFileTrait;
+
     public function index()
     {
         $articles = Article::paginate(10);
@@ -25,6 +28,7 @@ class ArticleController extends Controller
         $article->title = $request->input('title');
         $article->summary = $request->input('summary');
         $article->content = $request->input('content');
+        $article->cover_url = $this->QiniuUpload('cover', $request);
         $article->created_at = time();
         $article->save();
         \Flashy::success('文章添加成功');

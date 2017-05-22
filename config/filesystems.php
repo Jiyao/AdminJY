@@ -63,6 +63,19 @@ return [
             'bucket' => env('AWS_BUCKET'),
         ],
 
+        'qiniu' => [
+            'driver'  => 'qiniu',
+            'domains' => [
+                'default'   => 'oqc1nlksw.bkt.clouddn.com', //你的七牛域名
+                'https'     => '',         //你的HTTPS域名
+                'custom'    => '',     //你的自定义域名
+            ],
+            'access_key'=> '_BrajsQP8K3rM9II3kNq3XysSZm8L3_TOqwhkS-9',  //AccessKey
+            'secret_key'=> 'XBBdkaBVEAWCdWeyQNjMC4q_CX7Ll1DX1vc8UScp',  //SecretKey
+            'bucket'    => 'jiyao',  //Bucket名字
+            'notify_url'=> '',  //持久化处理回调地址
+            'access'=> '',  //持久化处理回调地址
+        ],
     ],
 
 ];

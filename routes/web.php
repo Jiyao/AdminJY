@@ -27,3 +27,7 @@ Route::post('role/permissions', 'RoleController@savePerms');
 Route::resource('menu', 'MenuController');
 
 Route::resource('article', 'ArticleController');
+
+
+Route::get('upload', 'UploadController@index');
+Route::post('upload','UploadController@uploadFile');

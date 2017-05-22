@@ -19,7 +19,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                {!! Form::open(['url' => 'article', 'method' => 'post']) !!}
+                {!! Form::open(['url' => 'article', 'method' => 'post', 'enctype' => "multipart/form-data"]) !!}
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-7">
@@ -48,6 +48,12 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <input type="file" name="cover" />
                     </div>
                 </div>
                 <div class="row">

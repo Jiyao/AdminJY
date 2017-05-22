@@ -44,9 +44,7 @@
                                         <td>{{ $article->view_num }}</td>
                                         <td>{{ $article->updated_at }}</td>
                                         <td>
-                                            <a href="#" class="btn btn-xs btn-success">启用</a>
                                             <a href="#" class="btn btn-xs btn-primary">编辑</a>
-                                            <a href="{{ route('role.perms', $article->id) }}" class="btn btn-xs btn-info">权限</a>
                                         </td>
                                     </tr>
                                 @endforeach
