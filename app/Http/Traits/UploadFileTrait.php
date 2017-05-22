@@ -12,17 +12,19 @@ use zgldh\QiniuStorage\QiniuStorage;
  */
 trait UploadFileTrait
 {
-    public function QiniuUpload($name, Request $request)
+    /**
+     * @param $fileDir
+     * @param $fileRealPath
+     * @return bool
+     */
+    public function QiniuUpload($fileDir, $fileRealPath)
     {
-        $file = $request->file($name);
-        $fileName = md5($file->getClientOriginalName().time().rand()).'.'.$file->getClientOriginalExtension();
         // 上传到七牛
         $disk = QiniuStorage::disk('qiniu');
-        $bool = $disk->put('articles/cover_'.$fileName,file_get_contents($file->getRealPath()));
+        $bool = $disk->put($fileDir, file_get_contents($fileRealPath));
         // 判断是否上传成功
         if ($bool) {
-            // $path = $disk->privateDownloadUrl('articles/cover_'.$fileName);
-            return 'articles/cover_'.$fileName;
+            return true;
         }
         return false;
     }

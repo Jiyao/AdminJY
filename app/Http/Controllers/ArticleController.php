@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Traits\UploadFileTrait;
 use App\Markdown\Markdown;
 use App\Models\Article;
+use App\Services\ImageService;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    use UploadFileTrait;
+    public static $img_dir = 'article/cover/';
+    public static $img_type = 'cover';
 
     public function index()
     {
@@ -22,13 +23,13 @@ class ArticleController extends Controller
         return view('article.create');
     }
 
-    public function store(Request $request)
+    public function store(Request $request, ImageService $imageService)
     {
         $article = new Article;
         $article->title = $request->input('title');
         $article->summary = $request->input('summary');
         $article->content = $request->input('content');
-        $article->cover_url = $this->QiniuUpload('cover', $request);
+        $article->cover = $imageService->uploadImages($request->file('cover'), self::$img_dir, self::$img_type);
         $article->created_at = time();
         $article->save();
         \Flashy::success('文章添加成功');

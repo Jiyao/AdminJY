@@ -190,7 +190,8 @@ return [
 
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Nestable\NestableServiceProvider::class,
-        zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class
+        zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class
     ],
 
     /*
@@ -245,7 +246,8 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Flashy' => MercurySeries\Flashy\Flashy::class,
-        'Nestable' => Nestable\Facades\NestableService::class
+        'Nestable' => Nestable\Facades\NestableService::class,
+        'Image' => Intervention\Image\Facades\Image::class
     ],
 
 ];
