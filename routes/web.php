@@ -10,24 +10,26 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'HomeController@index')->name('home');
-
 Auth::routes();
 Route::get('logout', 'HomeController@logout')->name('getlogout');
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
-Route::resource('user', 'UserController');
+Route::group(['middleware' => 'auth'], function (){
+    Route::get('/', 'HomeController@index');
+    Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('role', 'RoleController');
-Route::resource('permission', 'PermissionController');
-Route::get('role/permissions/{id}', 'RoleController@Perms')->name('role.perms');
-Route::post('role/permissions', 'RoleController@savePerms');
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
-Route::resource('menu', 'MenuController');
+    Route::resource('user', 'UserController');
 
-Route::resource('article', 'ArticleController');
+    Route::resource('role', 'RoleController');
+    Route::resource('permission', 'PermissionController');
+    Route::get('role/permissions/{id}', 'RoleController@Perms')->name('role.perms');
+    Route::post('role/permissions', 'RoleController@savePerms');
 
+    Route::resource('menu', 'MenuController');
 
-Route::get('upload', 'UploadController@index');
-Route::post('upload','UploadController@uploadFile');
+    Route::resource('article', 'ArticleController');
+
+    Route::get('upload', 'UploadController@index');
+    Route::post('upload','UploadController@uploadFile');
+});

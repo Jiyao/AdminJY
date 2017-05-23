@@ -24,6 +24,7 @@
                                 <thead>
                                 <tr>
                                     <th>文章名</th>
+                                    <th>封面图</th>
                                     <th>类别</th>
                                     <th>描述</th>
                                     <th>浏览数</th>
@@ -39,6 +40,7 @@
                                                 {{ str_limit($article->title, 30) }}
                                             </a>
                                         </td>
+                                        <td><img src="{{ upload_url('article/cover/'.$article->cover) }}"/></td>
                                         <td></td>
                                         <td>{{ str_limit($article->summary, 30) }}</td>
                                         <td>{{ $article->view_num }}</td>

@@ -125,6 +125,11 @@ return [
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
+    /**
+     * images save to local
+     */
+    'image_local' => env('IMAGE_LOCAL', true),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

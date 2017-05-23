@@ -1,5 +1,5 @@
 <?php
-namespace App\Services;
+namespace App\Jy\Handler;
 
 use App\Exceptions\ImageException;
 use App\Http\Traits\UploadFileTrait;
@@ -10,7 +10,7 @@ use Intervention\Image\Facades\Image;
  * Author: jiyao
  * Date  : 2017/5/22
  */
-class ImageService
+class ImageHandler
 {
     use UploadFileTrait;
 
@@ -38,10 +38,10 @@ class ImageService
         $real_path = $this->file->getRealPath();
         $image_name = md5($this->file->getClientOriginalName().time().rand());
 
-        $result = $this->saveImagesToQiniu($dir .$image_name. '.'. $this->file_ext, $real_path);
+        $result = $this->saveImages($dir .$image_name. '.'. $this->file_ext, $real_path);
         if ($type == 'cover') {
             $thumb_path = $this->makeImageThumb($image_name. '.'.$this->file_ext);
-            $this->saveImagesToQiniu($dir .'/thumb/'.$image_name. '.'. $this->file_ext, $thumb_path);
+            $this->saveImages($dir .'/thumb/'.$image_name. '.'. $this->file_ext, $thumb_path);
         }
         return $result ? $image_name.'.'.$this->file_ext: '';
     }
@@ -54,11 +54,11 @@ class ImageService
         }
     }
 
-    protected function saveImagesToQiniu($save_name, $real_path)
-    {
-        return $this->QiniuUpload($save_name, $real_path);
-    }
-
+    /**
+     * 生成缩略图
+     * @param $image_name
+     * @return string
+     */
     protected function makeImageThumb($image_name)
     {
         $path = public_path().'/'.$image_name;
@@ -66,4 +66,20 @@ class ImageService
         $img->save($path);
         return $path;
     }
+
+    /**
+     * 上传图片
+     * @param $save_name
+     * @param $real_path
+     * @return bool
+     */
+    protected function saveImages($save_name, $real_path)
+    {
+        if (config('app.image_local')) {
+            return $this->localUpload($save_name, $real_path);
+        } else {
+            return $this->qiniuUpload($save_name, $real_path);
+        }
+    }
+
 }

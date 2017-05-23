@@ -128,3 +128,16 @@ blockquote.summary:before {
 .btn-floating .btn-floating-small i{
     font-size: 14px;
 }
+
+/**
+ * error-tip
+ */
+.error-tip{
+    display: none;
+}
+.has-error .error-tip {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #E74C3C;
+}

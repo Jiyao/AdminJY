@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Markdown\Markdown;
+use App\Exceptions\ImageException;
+use App\Http\Requests\ArticleStoreRequest;
+use App\Jy\Markdown\Markdown;
 use App\Models\Article;
-use App\Services\ImageService;
-use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    public static $img_dir = 'article/cover/';
-    public static $img_type = 'cover';
 
     public function index()
     {
@@ -23,16 +21,16 @@ class ArticleController extends Controller
         return view('article.create');
     }
 
-    public function store(Request $request, ImageService $imageService)
+    public function store(ArticleStoreRequest $request)
     {
         $article = new Article;
-        $article->title = $request->input('title');
-        $article->summary = $request->input('summary');
-        $article->content = $request->input('content');
-        $article->cover = $imageService->uploadImages($request->file('cover'), self::$img_dir, self::$img_type);
-        $article->created_at = time();
-        $article->save();
-        \Flashy::success('文章添加成功');
+        try {
+            $request->commonUpdate($article);
+            \Flashy::success('文章添加成功');
+        }catch (ImageException $e){
+            \Flashy::error($e->getMessage());
+            return redirect()->back()->withInput($request->input());
+        }
         return redirect()->route('article.index');
     }
 
