@@ -28,13 +28,13 @@
                     <div class="icon">
                         <i class="fa fa-cube" aria-hidden="true"></i>
                     </div>
-                    <div class="title">UI Kits</div>
+                    <div class="title">信息维护</div>
                 </a>
                 <div class="dropdown-menu">
                     <ul>
-                        <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i> UI Kits</li>
-                        <li><a href="#">Customize</a></li>
-                        <li><a href="#">Components</a></li>
+                        <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i>文章信息</li>
+                        <li><a href="{{ route('category.index') }}">类别管理</a></li>
+                        <li><a href="#">标签管理</a></li>
                         <li><a href="#">Card</a></li>
                         <li><a href="#">Form</a></li>
                         <li><a href="#">Table</a></li>

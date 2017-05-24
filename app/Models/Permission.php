@@ -1,12 +1,12 @@
 <?php
-namespace App\Permission;
+namespace App\Models;
 
 use Zizaco\Entrust\EntrustPermission;
 
 /**
- * App\Permission
+ * App\Models\Permission
  *
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Role[] $roles
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Role[] $roles
  * @mixin \Eloquent
  */
 class Permission extends EntrustPermission

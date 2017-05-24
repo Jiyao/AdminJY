@@ -1,5 +1,5 @@
 <?php
-namespace App\Role;
+namespace App\Models;
 
 use Zizaco\Entrust\EntrustRole;
 

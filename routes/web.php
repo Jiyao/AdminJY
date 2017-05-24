@@ -19,6 +19,7 @@ Route::group(['middleware' => 'auth'], function (){
 
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
+    #----------- 用户权限 #
     Route::resource('user', 'UserController');
 
     Route::resource('role', 'RoleController');
@@ -26,10 +27,10 @@ Route::group(['middleware' => 'auth'], function (){
     Route::get('role/permissions/{id}', 'RoleController@Perms')->name('role.perms');
     Route::post('role/permissions', 'RoleController@savePerms');
 
+
     Route::resource('menu', 'MenuController');
 
+    #----------- 文章 #
     Route::resource('article', 'ArticleController');
-
-    Route::get('upload', 'UploadController@index');
-    Route::post('upload','UploadController@uploadFile');
+    Route::resource('category', 'CategoryController');
 });

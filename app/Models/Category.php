@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Models\Article
+ * App\Category
  *
  * @mixin \Eloquent
  */
-class Article extends Model
+class Category extends Model
 {
     //
 }

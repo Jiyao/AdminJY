@@ -75,7 +75,7 @@
                     <div class="col-md-1"></div>
                     <div class="col-md-10">
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-success" onclick="return mk_submit()">提交</button>
+                            <button type="submit" class="btn btn-success">提交</button>
                             <a href="{{ route('role.index') }}" class="btn">取消</a>
                         </div>
                     </div>
