@@ -45,6 +45,18 @@
                     <div class="col-md-1"></div>
                     <div class="col-md-10">
                         <div class="box-body">
+                            <div class="form-group">
+                                <label for="tagged">标签:</label>
+                                <input name="tagged" id="tagged" class="tagsinput tagsinput-typeahead" value="Alabama"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <div class="box-body">
                             <div class="form-group {{ $errors->has('cover')?'has-error':'' }}">
                                 <label for="title">封面图片:</label>
                                 <span class="error-tip">格式不支持</span>

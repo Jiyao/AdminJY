@@ -1,5 +1,8 @@
-h3 a {
+h2 a {
     color: #aaaaaa;
+}
+h2 a:hover {
+    color: rgba(0, 148, 133, 0.6);
 }
 
 .card .card-header-btn {
@@ -141,3 +144,64 @@ blockquote.summary:before {
     margin-bottom: 10px;
     color: #E74C3C;
 }
+
+/**
+ * tags
+ */
+.card .card-header-line {
+    display: block;
+}
+.taglist {
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+}
+.taglist-inline > li {
+    display: inline-block;
+    margin-right: 5px;
+}
+.tagpop {
+
+}
+.inline-block {
+    display: inline-block;
+}
+.tag {
+    display: inline-block;
+    padding: 0 8px;
+    color: #BEBEBE;
+    background-color: rgba(128, 146, 143, 0.08);
+    height: 24px;
+    line-height: 24px;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 12px;
+}
+.tag[href]:hover,
+.tag[href]:focus {
+    color: #fff;
+    background-color: rgba(0, 148, 133, 0.6);
+    text-decoration: none;
+}
+.header-block {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #444;
+}
+.header-info {
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    color: #BEBEBE;
+}
+.header-info a {
+    color: #BEBEBE;
+    margin-right: 8px;
+}
+.header-info a:hover {
+    color: rgba(0, 148, 133, 0.6);;
+}
+.header-info i {margin-right: 3px;}
+.mr-top-8{ margin-top: 8px;}
