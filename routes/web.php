@@ -34,4 +34,6 @@ Route::group(['middleware' => 'auth'], function (){
     Route::resource('article', 'ArticleController');
     Route::resource('category', 'CategoryController');
     Route::get('tag', 'TagController@index')->name('tag');
+    Route::get('artickes/{tag}/tag', 'ArticleController@listByTag')->name('article.list.tag');
+    Route::get('artickes/{category_id}/category', 'ArticleController@listByCategory')->name('article.list.category');
 });

@@ -21,7 +21,7 @@ class Article extends Model
 
     public function getCategoryNameAttribute()
     {
-        $category = Category::findOrFail($this->attributes['category_id']);
-        return $category->name;
+        $category = Category::find($this->attributes['category_id']);
+        return $category ? $category->name: '';
     }
 }

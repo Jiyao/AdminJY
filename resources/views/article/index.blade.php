@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', '文章列表')
+@section('title', $title)
 @section('content')
 <div class="row">
     <div class="col-xs-12">
@@ -25,7 +25,6 @@
                                 <tr>
                                     <th>文章名</th>
                                     <th>封面图</th>
-                                    <th>类别</th>
                                     <th>描述</th>
                                     <th>浏览数</th>
                                     <th>更新日期</th>
@@ -41,7 +40,6 @@
                                             </a>
                                         </td>
                                         <td><img src="{{ upload_url('article/cover/'.$article->cover) }}"/></td>
-                                        <td></td>
                                         <td>{{ str_limit($article->summary, 30) }}</td>
                                         <td>{{ $article->view_num }}</td>
                                         <td>{{ $article->updated_at }}</td>
