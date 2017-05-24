@@ -33,4 +33,5 @@ Route::group(['middleware' => 'auth'], function (){
     #----------- 文章 #
     Route::resource('article', 'ArticleController');
     Route::resource('category', 'CategoryController');
+    Route::get('tag', 'TagController@index')->name('tag');
 });

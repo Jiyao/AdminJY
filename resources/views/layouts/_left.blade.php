@@ -34,7 +34,7 @@
                     <ul>
                         <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i>文章信息</li>
                         <li><a href="{{ route('category.index') }}">类别管理</a></li>
-                        <li><a href="#">标签管理</a></li>
+                        <li><a href="{{ route('tag') }}">标签管理</a></li>
                         <li><a href="#">Card</a></li>
                         <li><a href="#">Form</a></li>
                         <li><a href="#">Table</a></li>

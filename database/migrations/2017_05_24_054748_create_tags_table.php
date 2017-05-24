@@ -13,7 +13,12 @@ class CreateTagsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tags', function (Blueprint $table){
+            $table->increments('id');
+            $table->string('name', 255)->comment('标签名');
+            $table->text('description')->nullable()->comment('描述');
+            $table->integer('use_times')->unsigned()->default(0);
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('tags');
     }
 }
