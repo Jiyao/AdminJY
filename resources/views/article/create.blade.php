@@ -3,6 +3,7 @@
 @section('style')
     <link rel="stylesheet" href="{{ asset('assets/css/simplemde.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plug/tag-input.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plug/select.css') }}">
 @endsection
 @section('content')
 <div class="row">
@@ -57,7 +58,20 @@
                 </div>
                 <div class="row">
                     <div class="col-md-1"></div>
-                    <div class="col-md-10">
+                    <div class="col-md-5">
+                        <div class="box-body">
+                            <div class="form-group {{ $errors->has('category_id')?'has-error':'' }}">
+                                <label for="category">文章类别:</label>
+                                <span class="error-tip">格式不支持</span>
+                                <select class="form-control select select-info" id="category" name="category_id" data-toggle="select">
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
                         <div class="box-body">
                             <div class="form-group {{ $errors->has('cover')?'has-error':'' }}">
                                 <label for="title">封面图片:</label>
@@ -70,6 +84,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-1"></div>
                 </div>
                 <div class="row">
                     <div class="col-md-1"></div>

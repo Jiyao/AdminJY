@@ -21,7 +21,8 @@ class ArticleController extends Controller
 
     public function create()
     {
-        return view('article.create');
+        $categories = Category::all();
+        return view('article.create', compact('categories'));
     }
 
     public function store(ArticleStoreRequest $request)
@@ -47,7 +48,8 @@ class ArticleController extends Controller
     public function listByCategory($category_id)
     {
         $articles = Article::where('category_id', $category_id)->paginate();
-        $title = Category::select('name')->find($category_id);
+        $category = Category::select('name')->find($category_id);
+        $title = $category->name;
         return view('article.index', compact('articles','title'));
     }
 

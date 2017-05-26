@@ -6,6 +6,7 @@ use App\Http\Traits\TagTrait;
 use App\Models\Article;
 use App\Models\Tag;
 use App\Models\TaggedArticle;
+use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,6 +43,7 @@ class ArticleStoreRequest extends FormRequest
         $tag = new Tag();
         $article->title = $this->input('title');
         $article->user_id = Auth::id();
+        $article->category_id = $this->input('category_id');
         $article->tagged = $this->Taghandle($tag, $this->input('tagged'));
         $article->summary = $this->input('summary');
         $article->content = $this->input('content');
@@ -64,7 +66,7 @@ class ArticleStoreRequest extends FormRequest
         foreach ($new_tags as $key => $new_tag_id) {
             $tagged_arr[$key]['tag_id'] = $new_tag_id;
             $tagged_arr[$key]['article_id'] = $article_id;
-            $tagged_arr[$key]['created_at'] = time();
+            $tagged_arr[$key]['created_at'] = Carbon::now();
         }
         \DB::table('tagged_articles')->insert($tagged_arr);
     }
