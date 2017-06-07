@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Carbon\Carbon;
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,5 +26,11 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        if ($this->app->environment() == 'local') {
+            $this->app->register('Barryvdh\Debugbar\ServiceProvider');
+            $this->app->register('Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider');
+            $loader = AliasLoader::getInstance();
+            $loader->alias('Debugbar', 'Barryvdh\Debugbar\Facade');
+        }
     }
 }
